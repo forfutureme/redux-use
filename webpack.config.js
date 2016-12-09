@@ -8,8 +8,8 @@ var path = require("path");
 const process = require('process');
 // console.log(process.env);
 
-var DEV = path.resolve(__dirname, "src" +process.env.NODE_SRC);
-var OUTPUT = path.resolve(__dirname, "build" +process.env.NODE_SRC);
+var DEV = path.resolve(__dirname, "src" +process.env.NODE_SRC || '');
+var OUTPUT = path.resolve(__dirname, "build" +process.env.NODE_SRC || '');
 
 var config = {
     entry: DEV + "/index.js",
