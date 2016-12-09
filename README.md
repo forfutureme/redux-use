@@ -22,6 +22,12 @@
 ###2016-12-09
 
 * 补全src3剩余功能
+* src4利用Provider的context属性替换部分父子组件传递调用
+`const {store} = this.context`
+```ComponentName.contextTypes = {
+    store: React.PropTypes.object,
+    dispatch: React.PropTypes.func
+}```
 
 ###2016-12-08
 

@@ -23,13 +23,12 @@ import Footer from '../components/footer';
  */
 class App extends Component {
     render(){
-        const {dispatch, showLists, showFilter} = this.props;
+        const {showLists} = this.props;
         return (
             <div>
-                <AddTodo onAddClick={(text) => dispatch(actions.addTodo(text))}/>
-                <TodoList lists={showLists}
-                          onTodoClick={(index) => dispatch(actions.completeTodo(index))}/>
-                <Footer onFilterChange={(nextFilter) => dispatch(actions.showTodo(nextFilter))} filter={showFilter}/>
+                <AddTodo />
+                <TodoList lists={showLists} />
+                <Footer />
             </div>
         )
     }
@@ -77,6 +76,10 @@ function mapStateToProps(state) {
         showLists: showList(state.lists, state.todoShow),
         showFilter: state.todoShow
     };
+}
+
+function mapDispatchToProps() {
+
 }
 
 export default connect(mapStateToProps)(App);

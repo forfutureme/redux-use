@@ -3,13 +3,19 @@
  * @title 展示组件，添加新item
  */
 import React, {Component, PropTypes} from 'react';
+import actions from '../actions/actions';
 
 export default class AddTodo extends Component {
     handleClick(e){
+        //获取绑定在组件上的context
+        const {store} = this.context;
+        const dispatch = store.dispatch;
         const input = this.refs.input;
         const text = input.value.trim();
-        this.props.onAddClick(text);
+        // this.props.onAddClick(text);
+        dispatch(actions.addTodo(text));
         input.value = '';
+
     }
     handleKeyDown(e){
         const input = this.refs.input;
@@ -27,8 +33,9 @@ export default class AddTodo extends Component {
     }
 }
 
-AddTodo.PropTypes = {
-    onAddClick: PropTypes.func.isRequired
+AddTodo.contextTypes = {
+    store: React.PropTypes.object,
+    dispatch: React.PropTypes.func
 };
 
 

@@ -3,17 +3,21 @@
  * @title
  */
 import React, {Component, PropTypes} from 'react';
+import actions from '../actions/actions';
 
 export default class Footer extends Component {
     renderFilter(filter, name) {
-        if (filter === this.props.filter) {
+        const {store} = this.context;
+        const {todoShow} = store.getState();
+        const dispatch = store.dispatch;
+        if (filter === todoShow) {
             return name
         }
 
         return (
             <a href='#' onClick={e => {
-                e.preventDefault()
-                this.props.onFilterChange(filter)
+                e.preventDefault();
+                dispatch(actions.showTodo(filter));
             }}>
                 {name}
             </a>
@@ -36,11 +40,7 @@ export default class Footer extends Component {
     }
 }
 
-Footer.propTypes = {
-    onFilterChange: PropTypes.func.isRequired,
-    filter: PropTypes.oneOf([
-        'TODO_SHOW_ALL',
-        'TODO_SHOW_COMPLETED',
-        'TODO_SHOW_ACTIVE'
-    ]).isRequired
+Footer.contextTypes = {
+    store: React.PropTypes.object
 };
+
