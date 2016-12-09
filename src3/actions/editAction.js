@@ -35,7 +35,7 @@ export function deleteTodo(index) {
  * @param index
  * @returns {{type: string, index: *}}
  */
-export function compeletTodo(index) {
+export function completeTodo(index) {
     return {
         type: actionType.TODO_MVC_COMPLETED,
         index

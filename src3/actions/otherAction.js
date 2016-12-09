@@ -16,3 +16,15 @@ export function other(msg) {
         msg
     }
 }
+
+/**
+ * 创建并输出过滤action方法
+ * @param filter
+ * @returns {{type: string, filter: *}}
+ */
+export function showTodo(filter) {
+    return {
+        type: constValue.TODO_SET_VISIBILITY,
+        filter
+    }
+}

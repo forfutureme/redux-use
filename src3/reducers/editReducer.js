@@ -12,33 +12,44 @@ import constValue from '../constValue/constValue';
  * @returns {*}
  */
 export default function todos(state = [], action) {
-    //编辑方法对象
-    let todoMap = {
-        [constValue.TODO_MVC_ADD](){
+    // //编辑方法对象
+    // let todoMap = {
+    //     [constValue.TODO_MVC_ADD](){
+    //
+    //     },
+    //     [constValue.TODO_MVC_COMPLETED](){
+    //
+    //     },
+    //     [constValue.TODO_MVC_DELETE](){
+    //
+    //     },
+    //     defaultFun(){
+    //         return state;
+    //     }
+    // };
+    // //查表法匹配对应type并执行，如果匹配不到执行默认方法
+    // todoMap[action.type] ? todoMap[action.type]() : todoMap['defaultFun']();
+    switch (action.type){
+        case constValue.TODO_MVC_ADD:
             return [
                 ...state,
                 {
                     text: action.text,
                     completed: false
                 }
-            ]
-        },
-        [constValue.TODO_MVC_COMPLETED](){
+            ];
+        case constValue.TODO_MVC_COMPLETED:
             return [
                 ...state.slice(0, action.index),
                 Object.assign({}, state[action.index], {
                     completed: true
                 }),
                 ...state.slice(action.index + 1)
-            ]
-        },
-        [constValue.TODO_MVC_DELETE](){
-            return [...state.splice(action.index, 1)];
-        },
-        defaultFun(){
-            return state;
-        }
-    };
-    //查表法匹配对应type并执行，如果匹配不到执行默认方法
-    todoMap[action.type] ? todoMap[action.type]() : todoMap['defaultFun']();
+            ];
+        case constValue.TODO_MVC_DELETE:
+            return [...state.splice(action.index, 1)]
+        default:
+            return state
+    }
 }
+
