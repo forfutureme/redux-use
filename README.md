@@ -18,18 +18,40 @@
 
 * `src=3`执行的是todoMVC的例子
 
+* `src=4`执行的是redux结合中间件请求异步action的例子
+
 
 ##更新说明
+
+###2016-12-14
+
+* 补全 `action, reducer`，以及 `app`组件实现简单的异步 `action`请求，页面输出 `啊哈呦`
+
+###2016-12-13
+
+* 新增`src4`，尝试借助中间件执行异步action
+* 引入`react-router`备用
+* 引入`babel-plugin-transform-object-rest-spread`支持对象展开符运算。
+* 引入`babel-polyfill,isomorphic-fetch`实现ajax方法
+* 引入 `redux-logger` 打印触发 `action`日志打印中间件
+* 引入 `redux-thunk` 支持异步 `action`的中间件
+
+
 
 ###2016-12-09
 
 * 补全src3剩余功能
 * src4利用Provider的context属性替换部分父子组件传递调用
+
 `const {store} = this.context`
-```ComponentName.contextTypes = {
+
+```
+//检查从context获取的store和dispatch，这个是必须要有的
+ComponentName.contextTypes = {
     store: React.PropTypes.object,
     dispatch: React.PropTypes.func
-}```
+}
+```
 
 ###2016-12-08
 
