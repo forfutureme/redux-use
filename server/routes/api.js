@@ -6,12 +6,15 @@ function api(req, res) {
 
     res.json([
         {
+            id: 1,
             text: '啊'
         },
         {
+            id: 2,
             text: '哈'
         },
         {
+            id: 3,
             text: '呦'
         }
     ]);

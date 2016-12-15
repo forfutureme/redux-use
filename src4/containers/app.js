@@ -6,13 +6,22 @@ import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';
 import * as action from '../actions/actions';
 
-console.log(action);
 
+/**
+ * 创建App组件
+ */
 class App extends Component {
+    /**
+     * 获取props
+     * @param props
+     */
     constructor(props){
         super(props);
-        console.log(props);
     }
+
+    /**
+     * 组件渲染后执行dispatch调用默认接口
+     */
     componentDidMount(){
         const { dispatch, selectedSubreddit } = this.props;
         dispatch(action.toFetchItem(selectedSubreddit))
@@ -21,7 +30,7 @@ class App extends Component {
         const {items} = this.props;
         const html = items.map(function (item) {
             return (
-                <span>{item.text}</span>
+                <span key={item.id}>{item.text}</span>
             )
         });
         return (
@@ -32,8 +41,13 @@ class App extends Component {
     }
 }
 
+/**
+ * 定义关联state方法
+ * @param state
+ * @returns {{selectedSubreddit: *, items: Array, isFetching: boolean, lastUpdated}}
+ */
 function mapStateToProps(state) {
-    const { selectedSubreddit, itemBySubreddit } = state
+    const { selectedSubreddit, itemBySubreddit } = state;
     const {
         isFetching,
         lastUpdated,
@@ -41,7 +55,7 @@ function mapStateToProps(state) {
     } = itemBySubreddit[selectedSubreddit] || {
         isFetching: true,
         items: []
-    }
+    };
 
     return {
         selectedSubreddit,
@@ -51,6 +65,9 @@ function mapStateToProps(state) {
     }
 }
 
+/**
+ * 关联并输出App容器组件
+ */
 export default connect(mapStateToProps)(App);
 
 

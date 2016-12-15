@@ -7,7 +7,7 @@ export default {
     'REQUIRE_API_START': 'REQUIRE_API_START',                                   //开始请求数据
     'REQUIRE_API_SUCCESS': 'REQUIRE_API_SUCCESS',                               //请求成功
     'REQUIRE_API_FAIL': 'REQUIRE_API_FAIL',                                     //请求失败
-    'SELECT_SUBREDDIT': 'SELECT_SUBREDDIT'
+    'SELECT_SUBREDDIT': 'SELECT_SUBREDDIT'                                      //选取请求接口名称
 }
 
 
