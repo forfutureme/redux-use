@@ -1,6 +1,6 @@
 /**
  * Created by huweijian on 2016/12/15.
- * @title
+ * @title 所有action
  */
 import constants from '../constants/constants';
 import { createAction } from 'redux-actions';

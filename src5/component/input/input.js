@@ -1,6 +1,6 @@
 /**
  * Created by huweijian on 2016/12/16.
- * @title
+ * @title 输入框 inputBox
  */
 import React, { Component, PropTypes } from 'react';
 import * as actions from '../../actions/actions';
@@ -74,6 +74,11 @@ export default class InputBox extends Component {
             </div>
         )
     }
+
+    /**
+     * 样式
+     * @returns {{inputBoxStyle: {display: string, height: number, alignItems: string, justifyContent: string}, inputStyle: {width: number, height: number, marginRight: number, padding: string, border: string, borderRadius: number, fontSize: number, color: string, outline: string}, buttonStyle: {display: string, alignItems: string, justifyContent: string, width: string, height: string, marginRight: number, cursor: string, border: number, borderRadius: number, background: string, color: string, fontSize: number, outline: string}, spanStyle: {fontSize: number, color: string}}}
+     */
     getStyle(){
         return {
             inputBoxStyle: {
@@ -116,7 +121,10 @@ export default class InputBox extends Component {
     }
 }
 
-
+/**
+ * 获取store 和 dispatch
+ * @type {{store: __React.Requireable<any>, dispatch: __React.Requireable<any>}}
+ */
 InputBox.contextTypes = {
     store: React.PropTypes.object,
     dispatch: React.PropTypes.func

@@ -1,6 +1,6 @@
 /**
  * Created by huweijian on 2016/12/15.
- * @title
+ * @title 首页App
  */
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';

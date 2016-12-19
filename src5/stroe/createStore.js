@@ -1,12 +1,13 @@
 /**
  * Created by huweijian on 2016/12/15.
- * @title
+ * @title 生成store
  */
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import reducer from '../reducers/reducers';
 
+//初始化日志中间件
 const loggerMiddleware = createLogger();
 
 /**

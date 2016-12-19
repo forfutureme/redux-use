@@ -1,12 +1,14 @@
 /**
  * Created by huweijian on 2016/12/15.
- * @title
+ * @title  reducer
  */
 import { combineReducers } from 'redux';
 import { handleActions, handleAction, combineActions } from 'redux-actions'
 import constants from '../constants/constants';
 import * as actions from '../actions/actions';
 
+
+//留着可以做参考
 //const items = handleActions(constants.SRC5_ADD, (state = [], action) => ([...state, action.payload]));
 
 // const items1 = handleActions({
@@ -44,6 +46,9 @@ import * as actions from '../actions/actions';
 //     }
 // }, []);
 
+/**
+ * 列表数据reducer
+ */
 const items = handleAction(combineActions(actions.addItem, actions.completedItem), {
     next(state, action){
         switch (action.type){
@@ -61,6 +66,9 @@ const items = handleAction(combineActions(actions.addItem, actions.completedItem
     }
 }, []);
 
+/**
+ * 显示分类reducer
+ */
 const showItem = handleAction(constants.SRC5_SHOW_ITEM, {
     next(state, action){
         return action.payload
@@ -68,9 +76,14 @@ const showItem = handleAction(constants.SRC5_SHOW_ITEM, {
 }, constants.SRC5_SHOW_ALL);
 
 
-
+/**
+ * 合并所有reducer， redux-actions提供了合并的方法，但是我还是喜欢用redux自己的
+ * @type {Reducer<S>}
+ */
 const reducer = combineReducers({
     items,
     showItem
 });
+
+//输出reducer
 export default reducer;

@@ -1,10 +1,13 @@
 /**
  * Created by huweijian on 2016/12/16.
- * @title
+ * @title todo li
  */
 import React, { Component, PropTypes } from 'react';
 import * as actions from '../../actions/actions';
 
+/**
+ * 定义输出li，
+ */
 export default class Todo extends Component {
     constructor(props, context){
         super(props, context);
@@ -32,6 +35,10 @@ export default class Todo extends Component {
 
 }
 
+/**
+ * 获取绑定在root的 store 和 dispatch
+ * @type {{store: __React.Requireable<any>, dispatch: __React.Requireable<any>}}
+ */
 Todo.contextTypes = {
     store: React.PropTypes.object,
     dispatch: React.PropTypes.func

@@ -1,6 +1,6 @@
 /**
  * Created by huweijian on 2016/12/15.
- * @title
+ * @title 所有常量
  */
 export default {
     SRC5_EDIT: 'SRC5_EDIT',

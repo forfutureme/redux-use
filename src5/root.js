@@ -1,6 +1,6 @@
 /**
  * Created by huweijian on 2016/12/15.
- * @title
+ * @title Root
  */
 import React, { Component, PropTypes } from 'react';
 import { Provider } from 'react-redux';
@@ -9,6 +9,9 @@ import configureStore from './stroe/createStore';
 
 const store = configureStore();
 
+/**
+ * root容器
+ */
 export default class Root extends Component {
     render(){
         return (

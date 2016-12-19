@@ -1,10 +1,13 @@
 /**
  * Created by huweijian on 2016/12/16.
- * @title
+ * @title list
  */
 import React, { Component, PropTypes } from 'react';
 import Todo from '../todo/todo';
 
+/**
+ * 定义输出list
+ */
 export default class TodoList extends Component {
     constructor(props){
         super(props);
@@ -25,6 +28,11 @@ export default class TodoList extends Component {
             </ul>
         )
     }
+
+    /**
+     * 返回样式
+     * @returns {{ulStyle: {display: string, width: number, margin: string, flexWrap: string}}}
+     */
     getStyle(){
         return {
             ulStyle: {

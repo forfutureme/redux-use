@@ -1,11 +1,14 @@
 /**
  * Created by huweijian on 2016/12/16.
- * @title
+ * @title 切换显示分类
  */
 import React, { Component, PropTypes } from 'react';
 import * as actions from '../../actions/actions';
 import constants from '../../constants/constants';
 
+/**
+ * 初始化并输出选择分类bar
+ */
 export default class ShowListBar extends Component {
     constructor(props, context){
         super(props, context);
@@ -37,6 +40,11 @@ export default class ShowListBar extends Component {
             </div>
         )
     }
+
+    /**
+     * 样式
+     * @returns {{aStyle: {color: string, textDecoration: string}}}
+     */
     getStyle(){
         return {
             aStyle: {
@@ -47,6 +55,10 @@ export default class ShowListBar extends Component {
     }
 }
 
+/**
+ * 获取store 和 dispatch
+ * @type {{store: __React.Requireable<any>, dispatch: __React.Requireable<any>}}
+ */
 ShowListBar.contextTypes = {
     store: React.PropTypes.object,
     dispatch: React.PropTypes.func

@@ -1,9 +1,12 @@
 /**
  * Created by huweijian on 2016/12/16.
- * @title
+ * @title Header
  */
 import React, { Component, PropTypes } from 'react';
 
+/**
+ * 吃实话并输出header组件
+ */
 export default class Header extends Component {
     constructor(props){
         super(props)
