@@ -12,6 +12,7 @@ import constValue from '../constValue/constValue';
  * @returns {*}
  */
 export default function todoShow(state = constValue.TODO_SHOW_ALL, action) {
+    console.log(action);
     switch (action.type) {
         case constValue.TODO_SET_VISIBILITY:
             return action.filter;

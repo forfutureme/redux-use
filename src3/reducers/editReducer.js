@@ -12,6 +12,7 @@ import constValue from '../constValue/constValue';
  * @returns {*}
  */
 export default function todos(state = [], action) {
+    console.log(action);
     // //编辑方法对象
     // let todoMap = {
     //     [constValue.TODO_MVC_ADD](){

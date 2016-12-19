@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_TYPE=test webpack --watch",
-    "dev": "NODE_SRC=4 webpack --watch"
+    "dev": "NODE_SRC=5 webpack --watch"
   },
   "keywords": [
     "react",
@@ -22,7 +22,8 @@
     "redux-router": "^2.1.2",
     "isomorphic-fetch": "^2.2.1",
     "redux-thunk": "^2.1.0",
-    "redux-logger": "^2.7.4"
+    "redux-logger": "^2.7.4",
+    "redux-actions": "^1.2.0"
   },
   "devDependencies": {
     "webpack": "^1.13.3",
