@@ -5,6 +5,7 @@
 
 import constants from '../constants/constants';
 import fetch from 'isomorphic-fetch';
+import toAjax from '../tools/toAjax';
 
 /**
  * 发起何种请求
@@ -80,8 +81,15 @@ function requireApiFail(subreddit, error) {
 function fetchItem(subreddit) {
     return dispatch => {
         dispatch(requireApiStart(subreddit));
-        return fetch(`http://localhost:3000/m.${subreddit}`)
-            .then(response => response.json())
+        return toAjax({
+            params: {
+                '_mt': subreddit,
+                query: {
+                    id: 1,
+                    password: 123456
+                }
+            }
+        })
             .then(json => dispatch(requireApiSuccess(subreddit, json)))
             .catch(error => dispatch(requireApiFail(subreddit, error)))
     }

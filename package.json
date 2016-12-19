@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_TYPE=test webpack --watch",
-    "dev": "NODE_SRC=5 webpack --watch"
+    "dev": "NODE_SRC=4 webpack --watch"
   },
   "keywords": [
     "react",
